@@ -2178,7 +2178,8 @@ row:selected:focused {
 .cell:hover {
 	/* Poner el mismo fondo que .view para evitar mouse-over en listas */
 	/*background-color: @theme_base_color;*/
-    background-color: alpha(@theme_base_color, 0.0);
+	/* Alpha channel with trouble. */
+    /*background-color: alpha(@theme_base_color, 0.0);*/
 
 }
 
