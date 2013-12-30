@@ -311,9 +311,9 @@
 
 	(edit the line below according to the style of nautilus you want) 
 -------------------------------------------------------------------- */
+/*
 @import url("nautilus36.css");
 
-/*
 	Select your enviroment 
 	----------------------
 	1.- Gnome-shell and Cinnamon
@@ -327,4 +327,120 @@
 
 .menuitem {
 	background-color: transparent;
+}
+
+GtkHeaderBar {
+	padding: 5px;
+	border-radius: 7px 7px 0 0;
+	background-image: -gtk-gradient (linear,
+									left top,
+									left bottom,
+									from (shade(@theme_bg_color, 0.96)),
+									to (shade(@theme_bg_color, 0.84)));
+	font-style: italic;
+	font-weight: bold;
+	font-size: 8px;
+	font-family: serif;
+}
+
+.window-frame {
+	border-radius: 7px 7px 0 0;
+	box-shadow: 0 2px 6px 3px alpha(black, 0.4);
+}
+
+/************
+ * nautilus *
+ ************/
+.nautilus-canvas-item {
+    border-radius: 3px;
+}
+
+.nautilus-desktop.nautilus-canvas-item {
+    color: white;
+    text-shadow: 1px 1px black;
+}
+
+.nautilus-desktop.nautilus-canvas-item:active {
+    color: @theme_fg_color;
+}
+
+.nautilus-desktop.nautilus-canvas-item:selected {
+    color: @theme_selected_fg_color;
+}
+
+.nautilus-desktop.nautilus-canvas-item:active,
+.nautilus-desktop.nautilus-canvas-item:prelight,
+.nautilus-desktop.nautilus-canvas-item:selected {
+    text-shadow: none;
+}
+
+NautilusWindow .toolbar {
+    border-width: 0 0 1px;
+    border-style: solid;
+    border-color: shade(@toolbar_bg_color, 0.7);
+}
+
+NautilusWindow .sidebar .frame {
+    border-style: none;
+}
+
+NautilusWindow > GtkGrid > .pane-separator,
+NautilusWindow > GtkGrid > .pane-separator:hover {
+    border-width: 0 1px 0 0;
+    border-style: solid;
+    border-color: shade(@theme_bg_color, 0.8);
+    background-color: shade(@theme_bg_color, 1.08);
+}
+
+NautilusNotebook.notebook {
+    border-right-width: 0;
+    border-left-width: 0;
+    border-bottom-width: 0;
+}
+
+NautilusNotebook .frame {
+    border-width: 0;
+}
+
+NautilusQueryEditor .primary-toolbar.toolbar {
+    border-top-width: 0;
+    border-bottom-width: 0;
+}
+
+NautilusQueryEditor .toolbar {
+    padding-top: 3px;
+    padding-bottom: 2px;
+    border-width: 1px 0 0 0;
+    border-style: solid;
+    border-color: @toolbar_bg_color;
+    background-color: shade(@toolbar_bg_color, 0.9);
+}
+
+NautilusQueryEditor .toolbar:nth-child(2) {
+    border-color: shade(@toolbar_bg_color, 0.8);
+}
+
+NautilusQueryEditor .toolbar:last-child,
+NautilusQueryEditor .primary-toolbar.toolbar:only-child {
+    border-bottom-width: 1px;
+    border-bottom-color: shade(@toolbar_bg_color, 0.8);
+}
+
+/******************
+ * gnome terminal *
+ ******************/
+VteTerminal {
+    background-color: @osd_base;
+    color: @osd_fg;
+}
+
+TerminalWindow GtkNotebook.notebook {
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
+}
+
+TerminalWindow .scrollbars-junction,
+TerminalWindow .scrollbar.trough {
+    background-color: @osd_base;
 }
